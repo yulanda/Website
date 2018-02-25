@@ -1,0 +1,86 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>Yu & Jian</title>
+		<link rel="stylesheet" type="text/css" href="css/photo.css"/>
+		<link rel="stylesheet" type="text/css" href="css/index.css"/>
+		<script type="text/javascript" src="js/index.js"></script>
+		<script src="http://code.jquery.com/jquery-3.3.1.js"></script>
+	</head>
+	
+	<body>
+		<ul id="nav">
+				<li><a href="index.html">Home</a></li>
+				<li><a href="aboutus.html">About Us</a></li>
+				<li><a href="photo.html">Photo</a></li>
+				<li><a href="music.html">Music</a></li>
+		</ul>
+		<div  id="imagecontainer" >
+			<img class="slides" src="image/main1.jpg"/>
+			<img class="slides" src="image/main2.jpg"/>
+			<img class="slides" src="image/main3.jpg"/>
+			<img class="slides" src="image/main4.jpg"/>
+			<img class="slides" src="image/main5.jpg"/>
+		</div>
+		
+		<div >
+			<!-- <img  src="image/main1.jpg"/> -->
+			<!-- <img  src="image/main2.jpg"/> -->
+			<!-- <img  src="image/main3.jpg"/> -->
+			<!-- <img  src="image/main4.jpg"/> -->
+			<!-- <img  src="image/main5.jpg"/> -->
+			<table align="center" class="gallary">
+						<tr><td>
+								<img  src="image/main1.jpg"/>
+						</td>
+						<td>
+								<img  src="image/main1.jpg"/>
+						</td>
+						<td>
+								<img  src="image/main1.jpg"/>
+						</td>
+						<td>
+								<img  src="image/main1.jpg"/>
+						</td>
+						<td>
+								<img  src="image/main1.jpg"/>
+						</td>
+	
+						
+						</table>			
+		</div>
+	</body>
+	<script>
+		var index=1;
+		
+		autoSlide();
+		function autoSlide(){
+			var i;
+			var x=document.getElementsByClassName('slides');
+			for(i=0; i<x.length; i++)
+			{
+				x[i].style.dispkay='none';
+			}
+			if(index > x.length) {index=1;}
+			x[index-1].style.display = 'block';
+			index++;
+			setTimeout(autoSlide,4000);
+		}
+		
+		showImage(1);
+		function showImage(n){
+			var i;
+			var x=document.getElementsByClassName('slides');
+			if (n > x.length) {index=1};
+			if (n < 1) {index = x.length};
+			
+			for(i=0; i<x.length; i++)
+			{
+				x[i].style.display='none';
+			}
+			x[index-1].style.display = 'block';
+		}
+		
+	</script>
+</html>
